@@ -4,7 +4,7 @@
   >
     {{ pokeInfo.name }}
     {{ pokeInfo.base_experience }}
-    <button class="bg-green-800 p-2" @click="$store.dispatch('req/ADDCART', pokeInfo)">Comprar</button>
+    <button class="bg-green-800 p-2" @click="$store.dispatch('req/ADDCART', pokeInfo)">Adicionar ao carrinho</button>
   </div>
 </template>
 

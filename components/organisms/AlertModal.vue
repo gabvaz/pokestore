@@ -1,17 +1,28 @@
 <template>
-  <div class="absolute">
-    <div v-if="hasSelected " class="modalBackdrop" @click="$store.dispatch('req/SELECTREMOVE')"></div>
+<div class="absolute">
+    <div v-if="hasBuy || noCashback" class="modalBackdrop" @click="$store.dispatch('req/CLOSEALERT')"></div>
     <transition name="show-modal">
-      <ModalContent :pokeInfo="hasSelected" class="modal" v-if="hasSelected"/>
+        <div v-if="hasBuy" class="modal text-center">
+          {{noCashback}}
+            <p>OBRIGADO PELA SUA COMPRA</p>
+            <div>Você recebeu <span class="bg-green-400">R${{ hasBuy }}</span> de volta!!</div>
+        </div>
+        <div v-if="noCashback" class="modal text-center">
+            <p>OBRIGADO PELA SUA COMPRA</p>
+            <p>Como você usou o saldo da sua carteira, essa compra não gerou um cashback :( </p>
+        </div>
     </transition>
 </div>
 </template>
 <script>
 export default {
   computed: {
-    hasSelected() {
-      return this.$store.getters["req/pokeSelected"];
+    hasBuy() {
+      return this.$store.getters["req/lastBuy"];
     },
+     noCashback() {
+      return this.$store.getters["req/noCashback"];
+    }
   },
 };
 </script>

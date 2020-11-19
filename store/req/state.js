@@ -1,5 +1,8 @@
 export default () => ({
     pokeSelected: false,
     searchQuery: '',
-    cartItems: []
+    cartItems: [],
+    credit: 0,
+    lastBuy: false,
+    noCashback: false
   })
