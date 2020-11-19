@@ -6,7 +6,9 @@
 </template>
 
 <script>
-
+export default {
+  middleware: 'cart'
+}
 </script>
 
 <style>

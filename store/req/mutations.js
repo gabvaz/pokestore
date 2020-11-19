@@ -7,5 +7,9 @@ export default{
     },
     SEARCH_POKEMON(state, payload) {
         state.searchQuery = payload;
+    },
+    ADD_CART(state, payload) {
+        state.cartItems = payload;
+        state.pokeSelected = false;
     }
 }

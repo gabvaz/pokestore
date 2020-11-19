@@ -1,5 +1,5 @@
 <template>
     <div>
-        SideView
+        <Cart />
     </div>
 </template>
